@@ -1,33 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🗓️ Vocare Terminplaner (Prototyp)
 
-## Getting Started
+Ein moderner Terminplanungs-Prototyp mit Fokus auf Klarheit, Geschwindigkeit und Benutzerfreundlichkeit.
 
-First, run the development server:
+## ✨ Features
+
+- ✅ Tages-, Wochen- und Monatsansicht
+- ✅ Dynamischer DatePicker (global)
+- ✅ Filterbar nach:
+  - Patient
+  - Kategorie
+  - Zeitraum
+- ✅ Termine erstellen (Demo)
+- ✅ Termine bearbeiten (Demo)
+- ✅ Visuelles Feedback & HoverCards
+- ⚙️ Supabase als Backend (nur Lesemodus im Prototyp)
+
+---
+
+## 🧪 Demo-Modus
+
+- Neue Termine werden **nicht in der Datenbank gespeichert**
+- Bearbeitete Termine werden **nicht gespeichert**
+- Änderungen werden stattdessen **in der Konsole angezeigt**
+
+---
+
+## 🧑‍💻 Tech Stack
+
+- [Next.js App Router](https://nextjs.org/)
+- [shadcn/ui](https://ui.shadcn.dev/)
+- [Supabase](https://supabase.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [date-fns](https://date-fns.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+---
+
+## 🚀 Lokale Entwicklung
 
 ```bash
+# 1. Abhängigkeiten installieren
+npm install
+
+# 2. Lokalen Dev-Server starten
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Projektstruktur
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+app/
+├── components/       # Wiederverwendbare UI-Komponenten
+│   ├── ui/           # UI-Komponenten von shadcn/ui
+│   ├── AppointmentCard.tsx
+│   ├── AppointmentCardWeek.tsx
+│   ├── AppointmentHoverCardContent.tsx
+│   ├── AppointmentList.tsx
+│   ├── CompactDatePicker.tsx
+│   ├── DatePicker.tsx
+│   ├── EditAppointmentDialog.tsx
+│   ├── FilterDialog.tsx
+│   ├── MonthDayCell.tsx
+│   ├── MonthSidebar.tsx
+│   ├── Navigation.tsx
+│   └── NewAppointmentDialog.tsx
+├── context/          # Globale States (Filter, Datum)
+├── lib/              # Supabase-Client (& Validierung - in work)
+├── pages/
+│   ├── appointments/ # Terminliste
+│   ├── week/         # Wochenansicht
+│   └── month/        # Monatsansicht
+└── types/            # TypeScript Typisierung
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📌 Nächstes Ziel (optional)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Echtzeit-Speichern aktivieren (Supabase insert / update)
+- Authentifizierung (nur eigene Termine sehen/bearbeiten)
+- Mobile Optimierung
+- Terminimport / CSV / ICS
+- Kalender-Export (PDF)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
+
+## 📝 Lizenz
+
+Nur zur internen Nutzung / Prototyping. Kein Produktivsystem.
+
+---
 
 ## Deploy on Vercel
 
