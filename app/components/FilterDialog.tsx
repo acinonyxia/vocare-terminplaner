@@ -13,11 +13,12 @@ import { supabase } from '@/app/lib/supabaseClient'
 import { useFilters } from '@/app/context/FilterContext'
 import { endOfDay } from 'date-fns'
 import { CompactDatePicker } from '@/app/components/CompactDatePicker'
+import { CategoryOption, PatientOption } from '@/app/types/database'
 
 export function FilterDialog() {
     const { filters, setFilters, resetFilters } = useFilters()
-    const [patients, setPatients] = useState<any[]>([])
-    const [categories, setCategories] = useState<any[]>([])
+    const [patients, setPatients] = useState<PatientOption[]>([])
+    const [categories, setCategories] = useState<CategoryOption[]>([])
     const [open, setOpen] = useState(false)
 
     const [local, setLocal] = useState(filters)

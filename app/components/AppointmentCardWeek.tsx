@@ -87,7 +87,7 @@ export default function AppointmentCardWeek({ appointment }: Props) {
                 style={{
                     borderColor: baseColor,
                 }}>
-                <AppointmentHoverCardContent appointment={appointment} borderColor={baseColor} />
+                <AppointmentHoverCardContent appointment={appointment} />
             </HoverCardContent>
         </HoverCard>
     )

@@ -44,11 +44,13 @@ npm install
 
 # 2. Lokalen Dev-Server starten
 npm run dev
+```
 
 ---
 
 ## 📁 Projektstruktur
 
+```
 app/
 ├── components/       # Wiederverwendbare UI-Komponenten
 │   ├── ui/           # UI-Komponenten von shadcn/ui
@@ -71,6 +73,7 @@ app/
 │   ├── week/         # Wochenansicht
 │   └── month/        # Monatsansicht
 └── types/            # TypeScript Typisierung
+```
 
 ---
 

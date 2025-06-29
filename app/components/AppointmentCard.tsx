@@ -92,7 +92,7 @@ export default function AppointmentCard({ appointment }: Props) {
                     style={{
                         borderColor: appointment.category_data?.color ?? '#ccc'
                     }}>
-                    <AppointmentHoverCardContent appointment={appointment} borderColor={appointment.category_data?.color ?? '#ccc'} />
+                    <AppointmentHoverCardContent appointment={appointment} />
                 </HoverCardContent>
             </HoverCard>
         </div>

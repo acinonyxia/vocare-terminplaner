@@ -11,10 +11,9 @@ import {
 
 type Props = {
   appointment: Appointment
-  borderColor?: string
 }
 
-export default function AppointmentHoverCardContent({ appointment, borderColor }: Props) {
+export default function AppointmentHoverCardContent({ appointment }: Props) {
   const start = new Date(appointment.start!)
   const end = new Date(appointment.end!)
 

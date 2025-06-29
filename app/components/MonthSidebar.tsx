@@ -1,5 +1,5 @@
 import type { Appointment } from '@/app/types/database'
-import { format, isSameDay, parseISO } from 'date-fns'
+import { format, isSameDay } from 'date-fns'
 import { de } from 'date-fns/locale'
 import {
   Clock,

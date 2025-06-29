@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react'
 import { supabase } from '@/app/lib/supabaseClient'
-import type { Appointment, Patient, Category } from '@/app/types/database'
+import type { Appointment } from '@/app/types/database'
 import AppointmentCard from '@/app/components/AppointmentCard'
 import { useFilters } from "@/app/context/FilterContext"
 import {
@@ -29,8 +29,6 @@ type PastRange = 'none' | 'week' | 'month' | 'year'
 
 export default function TerminePage() {
   const [appointments, setAppointments] = useState<Appointment[]>([])
-  const [patients, setPatients] = useState<Patient[]>([])
-  const [categories, setCategories] = useState<Category[]>([])
 
   const [selectedRange, setSelectedRange] = useState<PastRange>('none')
 
@@ -49,21 +47,7 @@ export default function TerminePage() {
       else setAppointments(data ?? [])
     }
 
-    // load patient and category data for filtering
-    const fetchMetaData = async () => {
-      const { data: patientsData } = await supabase
-        .from('patients')
-        .select('*')
-      const { data: categoriesData } = await supabase
-        .from('categories')
-        .select('*')
-
-      setPatients(patientsData ?? [])
-      setCategories(categoriesData ?? [])
-    }
-
     fetchAppointments()
-    fetchMetaData()
   }, [])
 
   const { filters } = useFilters()
@@ -90,7 +74,7 @@ export default function TerminePage() {
 
       return (matchesRange && matchesFrom && matchesTo && matchesPatient && matchesCategory)
     })
-  }, [appointments, filters, selectedRange])
+  }, [appointments, filters, selectedRange, today])
 
   // Group filtered appointments by date string
   const grouped = useMemo(() => {

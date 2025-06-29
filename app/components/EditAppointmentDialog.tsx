@@ -23,11 +23,16 @@ interface Props {
   appointment: Appointment
 }
 
+type CategoryOption = {
+  id: string
+  label: string
+}
+
 export default function EditAppointmentDialog({ appointment }: Props) {
   const [open, setOpen] = useState(false)
   const [success, setSuccess] = useState(false)
   const [showCalendar, setShowCalendar] = useState(false)
-  const [categories, setCategories] = useState<any[]>([])
+  const [categories, setCategories] = useState<CategoryOption[]>([])
 
   const [form, setForm] = useState({
     title: appointment.title ?? '',

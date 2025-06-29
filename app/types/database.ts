@@ -40,3 +40,14 @@ export type Category = {
   color: string | null
   icon: string | null
 }
+
+export type CategoryOption = {
+  id: string
+  label: string
+}
+
+export type PatientOption = {
+  id: string
+  firstname: string
+  lastname: string
+}

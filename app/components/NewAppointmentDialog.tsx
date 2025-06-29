@@ -18,11 +18,12 @@ import { format } from 'date-fns'
 import { de } from 'date-fns/locale'
 import { CalendarIcon, Plus } from 'lucide-react'
 import { CheckCircle2 } from 'lucide-react'
+import { CategoryOption, PatientOption } from '../types/database'
 
 export default function NewAppointmentDialog() {
   const [open, setOpen] = useState(false)
-  const [patients, setPatients] = useState<any[]>([])
-  const [categories, setCategories] = useState<any[]>([])
+  const [patients, setPatients] = useState<PatientOption[]>([])
+  const [categories, setCategories] = useState<CategoryOption[]>([])
   const [showCalendar, setShowCalendar] = useState(false)
   const [success, setSuccess] = useState(false)
 
